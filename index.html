@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forecast in Bratislava</title>
-<style>
+    <style>
         .hidden {
             display: none;
         }
@@ -37,15 +37,16 @@
        };
 
         document.getElementById("currentTemperature").innerHTML = currentTemperature;
-        document.getElementById("temperatureFor19").innerHTML = temperatureFor19;
-        document.getElementById("currentUnits").innerHTML = currentUnits;
-        document.getElementById("currentUnits2").innerHTML = currentUnits;
-        document.getElementById("ExtraForecast").innerHTML = ""
+document.getElementById("temperatureFor19").innerHTML = temperatureFor19;
+document.getElementById("currentUnits").innerHTML = currentUnits;
+document.getElementById("currentUnits2").innerHTML = currentUnits;
 const extraForecast = document.getElementById("ExtraForecast");
+
         if (IAmHiddenAfter14) {
-            extraForecast.classList.add("hidden");
+            ExtraForecast.classList.add("hidden");
         } else {
-            extraForecast.classList.add("");
+            ExtraForecast.classList.add("");
+        }
     }
 
     getapi(API_URL);
