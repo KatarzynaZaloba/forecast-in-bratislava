@@ -6,7 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forecast in Bratislava</title>
-
+<style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <script defer>
@@ -22,12 +26,14 @@
 
         const currentUnits = data.current_units.temperature_2m;
 
-        const TodayData = new Date();
+        const todayData = new Date();
+        const todayHour = todayData.getHours();
+        let IAmHiddenAfter14;
 
-        if (TodayData > 14) {
-                IAmHiddenAfter14 = true;
+        if (todayHour > 14) {
+          IAmHiddenAfter14 = true;
        } else {
-                IAmHiddenAfter14 = false;
+          IAmHiddenAfter14 = false;
        };
 
         document.getElementById("currentTemperature").innerHTML = currentTemperature;
@@ -35,6 +41,11 @@
         document.getElementById("currentUnits").innerHTML = currentUnits;
         document.getElementById("currentUnits2").innerHTML = currentUnits;
         document.getElementById("ExtraForecast").innerHTML = ""
+const extraForecast = document.getElementById("ExtraForecast");
+        if (IAmHiddenAfter14) {
+            extraForecast.classList.add("hidden");
+        } else {
+            extraForecast.classList.add("");
     }
 
     getapi(API_URL);
