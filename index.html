@@ -24,80 +24,11 @@
 
         const TodayData = new Date();
 
-        switch (TodayData) {
-            case 0:
-                IAmHiddenAfter14 = false;
-                break;
-            case 1:
-                IAmHiddenAfter14 = false;
-                break;
-            case 2:
-                IAmHiddenAfter14 = false;
-                break;
-            case 3:
-                IAmHiddenAfter14 = false;
-                break;
-            case 4:
-                IAmHiddenAfter14 = false;
-                break;
-            case 5:
-                IAmHiddenAfter14 = false;
-                break;
-            case 6:
-                IAmHiddenAfter14 = false;
-                break;
-            case 7:
-                IAmHiddenAfter14 = false;
-                break;
-            case 8:
-                IAmHiddenAfter14 = false;
-                break;
-            case 9:
-                IAmHiddenAfter14 = false;
-                break;
-            case 10:
-                IAmHiddenAfter14 = false;
-                break;
-            case 11:
-                IAmHiddenAfter14 = false;
-                break;
-            case 12:
-                IAmHiddenAfter14 = false;
-                break;
-            case 13:
-                IAmHiddenAfter14 = false;
-                break;
-            case 14:
+        if (TodayData > 14) {
                 IAmHiddenAfter14 = true;
-                break;
-            case 15:
-                IAmHiddenAfter14 = true;
-                break;
-            case 16:
-                IAmHiddenAfter14 = true;
-                break;
-            case 17:
-                IAmHiddenAfter14 = true;
-                break;
-            case 18:
-                IAmHiddenAfter14 = true;
-                break;
-            case 19:
-                IAmHiddenAfter14 = true;
-                break;
-            case 20:
-                IAmHiddenAfter14 = true;
-                break;
-            case 21:
-                IAmHiddenAfter14 = true;
-                break;
-            case 22:
-                IAmHiddenAfter14 = true;
-                break;
-            case 23:
-                IAmHiddenAfter14 = true;
-                break;
-        }
+       } else {
+                IAmHiddenAfter14 = false;
+       };
 
         document.getElementById("currentTemperature").innerHTML = currentTemperature;
         document.getElementById("temperatureFor19").innerHTML = temperatureFor19;
