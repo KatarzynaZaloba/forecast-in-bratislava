@@ -30,28 +30,23 @@
         const todayHour = todayData.getHours();
         let IAmHiddenAfter14;
 
-        if (todayHour > 14) {
-          IAmHiddenAfter14 = true;
-       } else {
-          IAmHiddenAfter14 = false;
-       };
+        IAmHiddenAfter14 = todayHour > 14;
 
         document.getElementById("currentTemperature").innerHTML = currentTemperature;
-document.getElementById("temperatureFor19").innerHTML = temperatureFor19;
-document.getElementById("currentUnits").innerHTML = currentUnits;
-document.getElementById("currentUnits2").innerHTML = currentUnits;
-const extraForecast = document.getElementById("ExtraForecast");
+        document.getElementById("temperatureFor19").innerHTML = temperatureFor19;
+        document.getElementById("currentUnits").innerHTML = currentUnits;
+        document.getElementById("currentUnits2").innerHTML = currentUnits;
+
+        const extraForecast = document.getElementById("ExtraForecast");
 
         if (IAmHiddenAfter14) {
-            ExtraForecast.classList.add("hidden");
+            extraForecast.classList.add("hidden");
         } else {
-            ExtraForecast.classList.add("");
+            extraForecast.classList.add("");
         }
     }
 
     getapi(API_URL);
-
-
 </script>
 <div id="forecast">
     <h1>Forecast in Bratislava</h1>
